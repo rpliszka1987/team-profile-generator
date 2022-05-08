@@ -7,6 +7,7 @@ const Intern = require('./lib/Intern.js');
 // List of employees
 var employees = [];
 
+// Manager
 const managerInput = [
     {
         type: 'input',
@@ -30,6 +31,31 @@ const managerInput = [
     }
 ];
 
+// Engineer
+const engineerInput = [
+    {
+        type: 'input',
+        name: 'name',
+        message: "Enter Engineer name: "
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: 'Enter id number: ',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter email: '
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Enter GitHub username: '
+    }
+];
+
+
 // start Manager information input
 function startInput() {
     // Start questions for manager
@@ -43,4 +69,13 @@ function startInput() {
         });
 };
 
-startInput();
+function engineerStart() {
+    return inquirer.prompt(engineerInput)
+        .then(engineerInfo => {
+            const engineer = new Engineer(engineerInput.name, engineerInfo.id, engineerInfo.email, engineerInfo.github);
+            console.log(engineer);
+        })
+};
+
+
+
