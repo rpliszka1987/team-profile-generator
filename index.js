@@ -3,6 +3,7 @@ const Employee = require('./lib/Employee.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+const createHTML = require('./src/js/app.js');
 
 // List of employees
 var employees = [];
@@ -135,7 +136,7 @@ function employeeMenu() {
             } else if ( option.option === 'Intern') {
                 internStart();
             } else {
-                console.log(employees);
+                createHTML(employees);
             }
         })
 };

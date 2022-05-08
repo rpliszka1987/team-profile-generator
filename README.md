@@ -12,6 +12,7 @@ This is a user prompt application which creates team members for a company. You 
 - [Manager-Intput](#manager-input)
 - [Engineer-Input](#engineer-input)
 - [Intern-Input](#intern-input)
+- [Demo-Video](#demo-video)
 - [GitHub](#github)
 - [Screenshot](#screenshot)
 
@@ -51,5 +52,7 @@ Run $npm run test
 ## GitHub
 
 Repo Url - https://github.com/rpliszka1987/team-profile-generator
+
+## Demo-Video
 
 ## Screenshot
