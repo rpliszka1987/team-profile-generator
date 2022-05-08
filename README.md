@@ -55,4 +55,8 @@ Repo Url - https://github.com/rpliszka1987/team-profile-generator
 
 ## Demo-Video
 
+https://drive.google.com/file/d/1EWsbOSpQBFnZDnE7lON2TV6-uCKZv1fE/view
+
 ## Screenshot
+
+![Page Screenshot](./src/images/team-generaot-page.png)
