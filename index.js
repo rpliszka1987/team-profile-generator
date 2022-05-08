@@ -79,6 +79,16 @@ const internInput = [
     }
 ];
 
+// Choices Menu
+const menuOption = [
+    {
+        type: 'list',
+        name: 'option',
+        message: 'Would you like to add more employees?',
+        choices: ['Engineer', 'Intern', 'Finish']
+    }
+];
+
 
 // start Manager information input
 function startInput() {
@@ -89,6 +99,7 @@ function startInput() {
             const manager = new Manager(managerInfo.name, managerInfo.id, managerInfo.email, managerInfo.officeNumber);
             // Add manager to the employee array
             employees.push(manager);
+            employeeMenu();
         
         });
 };
@@ -98,9 +109,10 @@ function engineerStart() {
     return inquirer.prompt(engineerInput)
         .then(engineerInfo => {
             // Create a new Engineer
-            const engineer = new Engineer(engineerInput.name, engineerInfo.id, engineerInfo.email, engineerInfo.github);
+            const engineer = new Engineer(engineerInfo.name, engineerInfo.id, engineerInfo.email, engineerInfo.github);
             // add engineer to employee array
             employees.push(engineer);
+            employeeMenu();
         })
 };
 
@@ -109,11 +121,26 @@ function internStart() {
     return inquirer.prompt(internInput)
         .then(internInfo => {
             const intern = new Intern(internInfo.name, internInfo.id, internInfo.email, internInfo.school);
-            console.log(intern);
+            employees.push(intern)
+            employeeMenu()
         })
 };
 
-internStart();
+// employee add choice menu
+function employeeMenu() {
+    return inquirer.prompt(menuOption)
+        .then(option => {
+            if (option.option === 'Engineer') {
+                engineerStart();
+            } else if ( option.option === 'Intern') {
+                internStart();
+            } else {
+                console.log(employees);
+            }
+        })
+};
+
+startInput();
 
 
 
