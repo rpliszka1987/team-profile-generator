@@ -14,7 +14,7 @@ function createHTML(employees) {
     }
 
     // fs.writeFileSync('./dist/index.html', mainHTML());
-    fs.writeFileSync('./dist/index.html', createHTML(employeesData));
+    fs.writeFileSync('./dist/index.html', mainHTML(employeesData));
 };
 
 function mainHTML(data) {
@@ -42,6 +42,24 @@ function mainHTML(data) {
         </body>
     
     </html>`
+};
+
+function createManager(data) {
+    return `
+    <div class="card col-2 m-2">
+        <div class="card-header bg-primary">
+            <h5 class="card-title text-white">${data.name}</h5>
+            <h6 class="card-title text-white"><i class="bi bi-person-square"></i> Manager</h6>
+        </div>
+        <div class="bg-light text-dark">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: ${data.id}</li>
+                <li class="list-group-item">Number: ${data.officeNumber}</li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}" class="card-link">${data.email}</a></li>
+            </ul>
+        </div>
+    </div>
+    `
 };
 
 module.exports = createHTML;
