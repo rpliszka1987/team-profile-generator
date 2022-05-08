@@ -15,6 +15,7 @@ function createHTML(employees) {
 
     // fs.writeFileSync('./dist/index.html', mainHTML());
     fs.writeFileSync('./dist/index.html', mainHTML(employeesData));
+    console.log("File Created");
 };
 
 function mainHTML(data) {
@@ -49,7 +50,7 @@ function createManager(data) {
     <div class="card col-2 m-2">
         <div class="card-header bg-primary">
             <h5 class="card-title text-white">${data.name}</h5>
-            <h6 class="card-title text-white"><i class="bi bi-person-square"></i> ${this.getRole()}</h6>
+            <h6 class="card-title text-white"><i class="bi bi-cup"></i> ${data.getRole()}</h6>
         </div>
         <div class="bg-light text-dark">
             <ul class="list-group list-group-flush">
@@ -66,14 +67,14 @@ function createEngineer(data) {
     return `
     <div class="card col-2 m-2">
         <div class="card-header bg-primary">
-            <h5 class="card-title text-white">${engineer.name}</h5>
-            <h6 class="card-title text-white"><i class="bi bi-git"></i> ${this.getRole()}</h6>
+            <h5 class="card-title text-white">${data.name}</h5>
+            <h6 class="card-title text-white"><i class="bi bi-eyeglasses"></i> ${data.getRole()}</h6>
         </div>
         <div class="bg-light text-dark">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${engineer.id}</li>
-                <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" target="_blank" class="card-link">${engineer.github}</a></li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.email}" class="card-link">${engineer.email}</a></li>
+                <li class="list-group-item">ID: ${data.id}</li>
+                <li class="list-group-item">Github: <a href="https://github.com/${data.github}" target="_blank" class="card-link">${data.github}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}" class="card-link">${data.email}</a></li>
             </ul>
         </div>
     </div>
@@ -84,14 +85,14 @@ function createIntern(data) {
     return `
     <div class="card col-2 m-2">
         <div class="card-header bg-primary">
-            <h5 class="card-title text-white">${intern.name}</h5>
-            <h6 class="card-title text-white"><i class="bi bi-mortarboard-fill"></i> ${this.getRole()}</h6>
+            <h5 class="card-title text-white">${data.name}</h5>
+            <h6 class="card-title text-white"><i class="bi bi-file-person"></i> ${data.getRole()}</h6>
         </div>
         <div class="bg-light text-dark">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${intern.id}</li>
-                <li class="list-group-item">School: ${intern.school}</li>
-                <li class="list-group-item">Email: <a href="mailto:${intern.email}" class="card-link">${intern.email}</a></li>
+                <li class="list-group-item">ID: ${data.id}</li>
+                <li class="list-group-item">School: ${data.school}</li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}" class="card-link">${data.email}</a></li>
             </ul>
         </div>
     </div>
