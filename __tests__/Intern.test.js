@@ -11,12 +11,12 @@ test('intern school', () => {
 test('get school name', ()=> {
     const intern = new Intern('Rob', 23, 'rob@test.com','School');
 
-    expect(intern.getSchool().toEqual(expect.any(String)));
+    expect(intern.getSchool()).toEqual(expect.any(String));
 });
 
 // Test getRole()
 test('get intern role', () => {
     const intern = new Intern('Rob', 23, 'rob@test.com','School');
 
-    expect(intern.getRole().toBe('Intern'));
+    expect(intern.getRole()).toBe('Intern');
 });

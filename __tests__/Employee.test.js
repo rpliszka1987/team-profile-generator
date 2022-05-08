@@ -13,26 +13,26 @@ test('creates an Employee object', () => {
 test('get employee name', () =>{
     const employee = new Employee('Rob', 23, 'rob@email.com');
 
-    expect(employee.getName().toEqual(expect.any(String)));
+    expect(employee.getName()).toEqual(expect.any(String));
 });
 
 // Tests getId()
 test('get employee id', () => {
     const employee = new Employee('Rob', 23, 'rob@email.com');
 
-    expect(employee.getId().toEqual(expect.any(Number)));
+    expect(employee.getId()).toEqual(expect.any(Number));
 });
 
 // Tests getEmail()
 test('get employee email', () => {
     const employee = new Employee('Rob', 23, 'rob@email.com');
 
-    expect(employee.getEmail().toEqual(expect.any(String)));
+    expect(employee.getEmail()).toEqual(expect.any(String));
 });
 
 // Tests getRole()
 test('get employee role', () => {
     const employee = new Employee('Rob', 23, 'rob@email.com');
 
-    expect(employee.getRole().toBe('Employee'));
+    expect(employee.getRole()).toEqual('Employee');
 });

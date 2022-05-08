@@ -11,12 +11,12 @@ test('check for github username', ()=> {
 test('get github account link', () => {
     const engineer = new Engineer('Rob', 23, 'rob@test.com','rpliszka1987');
 
-    expect(engineer.getGithub().toEqual(expect.any(String)));
+    expect(engineer.getGithub()).toEqual(expect.any(String));
 });
 
 // Test for Engineer role
 test('get Engineer role', () => {
     const engineer = new Engineer('Rob', 23, 'rob@test.com','rpliszka1987');
 
-    expect(engineer.getRole().toBe('Engineer'));
+    expect(engineer.getRole()).toBe('Engineer');
 });
